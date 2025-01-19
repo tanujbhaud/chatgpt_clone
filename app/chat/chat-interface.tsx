@@ -7,7 +7,6 @@ import { User } from "@supabase/supabase-js";
 import { EditIcon, PlusIcon, SendIcon, TrashIcon } from "lucide-react";
 import ChatMessage from "@/components/ChatMessage";
 import type { Branch, Conversation, Message } from "@/types";
-
 interface ChatInterfaceProps {
   user: User;
 }
@@ -16,12 +15,12 @@ const ChatInput = ({
   conversationId,
   branchId,
   onMessageSent,
-  isLoading,
   setIsLoading,
 }: {
   conversationId: string | null;
   branchId: string | null;
   onMessageSent: () => void;
+  setIsLoading: (isLoading: boolean) => void;
 }) => {
   const [message, setMessage] = useState("");
   const [isSending, setIsSending] = useState(false);
@@ -119,10 +118,6 @@ export default function ChatInterface({ user }: ChatInterfaceProps) {
   const [branches, setBranches] = useState<Branch[]>([]);
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isVersionModalOpen, setIsVersionModalOpen] = useState(false);
-  const [versionBranches, setVersionBranches] = useState<
-    Array<{ branch: Branch; messages: Message[] }>
-  >([]);
 
   const supabase = createBrowserClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -527,7 +522,6 @@ export default function ChatInterface({ user }: ChatInterfaceProps) {
             <div className="p-4">
               <div className="max-w-3xl mx-auto">
                 <ChatInput
-                  isLoading={isLoading}
                   setIsLoading={setIsLoading}
                   conversationId={activeConversationId}
                   branchId={activeBranchId}

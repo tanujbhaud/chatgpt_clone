@@ -1,5 +1,5 @@
 // types/index.ts
-interface Conversation {
+export interface Conversation {
   id: string;
   user_id: string;
   title: string;
@@ -7,7 +7,7 @@ interface Conversation {
   updated_at: string;
 }
 
-interface Branch {
+export interface Branch {
   id: string;
   conversation_id: string;
   name: string;
@@ -17,7 +17,7 @@ interface Branch {
   forked_from_message_id?: string;
 }
 
-interface Message {
+export interface Message {
   id: string;
   conversation_id: string;
   branch_id: string;

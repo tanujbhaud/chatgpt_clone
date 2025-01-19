@@ -1,20 +1,18 @@
 "use client";
 import { EditIcon, HistoryIcon } from "lucide-react";
 import { useState } from "react";
-
+import type { Branch, Message } from "@/types";
 // components/chat/ChatMessage.tsx
 interface ChatMessageProps {
   message: Message;
   branch: Branch;
   onEdit: (messageId: string, newContent: string) => Promise<void>;
-  onShowVersionHistory: (messageId: string) => void;
 }
 
 export default function ChatMessage({
   message,
   branch,
   onEdit,
-  onShowVersionHistory,
 }: ChatMessageProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editContent, setEditContent] = useState(message.content);
