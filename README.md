@@ -1,6 +1,6 @@
 # ChatGPT Clone with User Edit Message Branching
 
-This is a simplified ChatGPT clone built using **Next.js**, **TypeScript**, and **Supabase**, with a focus on implementing the user message editing and branching functionality, currently a live feature on [chatgpt.com](https://chatgpt.com). This feature allows users to:
+This is a simplified ChatGPT clone built using **Next.js**, **TypeScript**, and **Supabase**, with a focus on implementing the user message editing and branching functionality, currently a live feature on [chatgpt-clone-nuune58td-tanujbhauds-projects.vercel.app/sign-up](https://chatgpt-clone-nuune58td-tanujbhauds-projects.vercel.app/sign-up). This feature allows users to:
 
 - Edit their original prompts
 - View previous versions of their prompts
